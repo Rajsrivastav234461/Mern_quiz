@@ -1,0 +1,100 @@
+/* Apply global styles */
+* {
+  font-family: 'Georgia', serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #b88c8c;
+}
+
+/* Centered heading */
+.heading {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Overlay styling */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(221, 217, 217, 0.5); /* Slightly adjusted for better transparency */
+  z-index: 1000; /* Ensure overlay is on top */
+}
+
+/* Modal styling */
+.modal {
+  background: white;
+  border: 2px solid black;
+  border-radius: 10px;
+  width: 40%;
+  max-width: 600px; /* Limit width on larger screens */
+  padding: 5% 5%;
+  line-height: 1.6;
+  position: fixed; /* Changed to fixed for consistent positioning */
+  top: 20%; /* Adjusted for better vertical centering */
+  left: 50%;
+  transform: translateX(-50%); /* Center horizontally */
+  overflow: auto;
+  z-index: 1001; /* Ensure modal is on top of overlay */
+}
+
+/* Label styling */
+.labels {
+  width: 100%;
+  padding: 2.5% 0;
+  margin: 8px 0;
+  text-align: left;
+  font-weight: bold;
+}
+
+/* Input field styling */
+.inputs {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Password input field styling */
+.inputs_pass {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid red;
+  border-radius: 4px;
+  outline: none;
+}
+
+/* Button styling */
+.buttons {
+  background: #4caf50;
+  border: none; /* Removed border for cleaner look */
+  border-radius: 4px;
+  padding: 10px 20px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.buttons:hover {
+  background: #45a049; /* Darker green on hover */
+}
+
+/* Responsive modal styling */
+@media screen and (max-width: 600px) {
+  .modal {
+    width: 80%;
+    top: 10%; /* Keep some margin from top */
+    left: 50%;
+    transform: translateX(-50%); /* Center horizontally */
+    padding: 5%;
+  }
+}
