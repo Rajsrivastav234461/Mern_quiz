@@ -1,40 +1,68 @@
-# React Authentication App
+ Environment Setup
+Backend Configuration:
 
-This React application features authentication, registration, and access to protected routes. It includes a login page with a video background, a registration page, and several protected pages that require user authentication.
+Ensure your backend server is running on http://localhost:5000 or adjust the API URL in the code as needed. The backend should handle authentication and registration.
 
-## Table of Contents
+API Endpoints:
 
-1. [Features](#features)
-2. [Getting Started](#getting-started)
-   - [Prerequisites](#prerequisites)
-   - [Installation](#installation)
-   - [Environment Setup](#environment-setup)
-3. [Folder Structure](#folder-structure)
-4. [Authentication Flow](#authentication-flow)
-5. [Deployment](#deployment)
-6. [Troubleshooting](#troubleshooting)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Acknowledgments](#acknowledgments)
+Login Endpoint: POST /api/auth/login
+Request Body: { "email": "user@example.com", "password": "yourpassword" }
+Response: { "token": "jwt_token_here" }
+Registration Endpoint: POST /api/auth/register
+Request Body: { "email": "user@example.com", "password": "yourpassword" }
+Response: { "message": "User registered successfully" }
+Folder Structure
+src/components/: Contains the React components.
+Login.js: Handles user login.
+Register.js: Manages user registration.
+TestPage.js: Displays a protected test page.
+MCQTestPage.js: Features a multiple-choice quiz.
+FinishTestPage.js: Shows a completion message after the test.
+src/App.js: Main component managing the application’s routing.
+src/index.js: Entry point for rendering the application.
+public/index.html: HTML template with the root element for React.
+Authentication Flow
+Login Page (/login):
 
-## Features
+Users enter their email and password.
+On successful login, a JWT token is stored in session storage, and the user is redirected to the /test page.
+Failed login attempts trigger an error message.
+Registration Page (/register):
 
-- **User Authentication:** Secure login and registration system.
-- **Protected Routes:** Restrict access to certain pages based on authentication status.
-- **Video Background:** Dynamic video background on the login page.
-- **Session Management:** Tokens stored in session storage for managing user sessions.
-- **Error Handling:** User-friendly error messages for failed login attempts.
+Users register by providing an email and password.
+Successful registration redirects users to the login page.
+Protected Routes:
 
-## Getting Started
+Access to /test, /mcq-test, and /finish-test requires authentication.
+Users without a valid token are redirected to the login page.
+Video Background:
 
-### Prerequisites
+The login page includes a video background for a modern user interface.
+Deployment
+Build the Application:
 
-- **Node.js**: Ensure you have Node.js (v14 or later) and npm installed. You can download Node.js from [nodejs.org](https://nodejs.org/).
+Create a production build with:
 
-### Installation
+bash
+Copy code
+npm run build
+This command generates a build directory with optimized files for deployment.
 
-1. **Clone the Repository:**
+Deploy:
 
-   ```bash
-   git clone https://github.com/yourusername/your-repository.git
-   cd your-repository
+Deploy the contents of the build directory to your hosting provider (e.g., Vercel, Netlify, AWS S3).
+
+Troubleshooting
+Login Issues: Ensure the backend server is running and the API URL is correct. Check for network errors and API responses.
+Token Storage: Verify that the token is correctly stored and retrieved from session storage.
+Video Issues: Confirm the video URL is valid and the video file is accessible.
+Contributing
+We welcome contributions to improve this project. To contribute:
+
+Fork the repository.
+Create a new branch for your feature or fix.
+Commit your changes with descriptive messages.
+Push to your forked repository.
+Open a pull request with details about your changes.
+License
+This project is licensed under the MIT License. See the LICENSE file for more information.
