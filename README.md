@@ -1,4 +1,5 @@
- Environment Setup
+MCQ TEST MERN
+Environment Setup
 Backend Configuration:
 
 Ensure your backend server is running on http://localhost:5000 or adjust the API URL in the code as needed. The backend should handle authentication and registration.
